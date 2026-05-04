@@ -1,0 +1,109 @@
+body{
+  margin: 30px;
+  text-align: center;
+  background-color: #f3f0e5;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+#parent{
+  display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   gap: 5px;
+}
+
+#Heading{
+  color: rgb(152, 114, 11);
+  font-size: 38px;
+  
+}
+
+#Heading2{
+  color: rgb(60, 60, 60);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 26px;
+ 
+}
+
+
+#Heading,
+#Heading2,
+.Para{
+  margin:8px 0;
+}
+
+
+.Para{
+  font-family:  sans-serif;
+   font-weight: lighter;
+   width: 70%;
+   margin: 8px auto;
+
+}
+
+#Foodlist{
+  /* border: 2px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 50px;
+}
+
+li{
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  width: 430px;
+  padding: 15px;
+  background: #f3f0e5;
+}
+
+li img{
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+li div{
+  display: flex;
+  flex-direction: column;
+}
+
+li h4{
+  margin: 0 0 8px 0;
+  font-size: 26px;
+  color: #222;
+  text-align: left;
+}
+
+li p{
+  margin: 0;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.4;
+  text-align: left;
+
+}
+
+li p:last-child{
+  margin-top: 12px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #111;
+  text-align: left;
+
+}
+
+
+span{
+  text-align: left;
+}
+
+#discount{
+  font-size: 18px;
+}
