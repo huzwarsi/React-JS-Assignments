@@ -57,7 +57,7 @@ const FoodList = () => {
     title: 'Samosa',
     img: 'https://images.unsplash.com/photo-1601050690597-df0568f70950',
     para: 'Crispy spicy samosa',
-    quantity: 25
+    quantity: 13
   },
   {
     title: 'Zinger Burger',
@@ -85,9 +85,9 @@ const FoodList = () => {
             <p>
              {foodItem.para}
             </p>
-            <span>{foodItem.quantity == 0 || foodItem.quantity <= 1 ? 'Sold Out' : `Quantity : ${foodItem.quantity}`}
+            <span>{foodItem.quantity === 0 ? 'Out of Stock' : `Quantity : ${foodItem.quantity}`
+             && foodItem.quantity >= 15 ? `Quantity: ${foodItem.quantity} : Discount Available` : `Quantity :${foodItem.quantity}`}
             </span>
-            <p id='discount'> {foodItem.quantity >= 20 ? 'Buy 1 Get One Free' : ''}</p>
           </div>
         </li>
         })}
