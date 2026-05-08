@@ -1,51 +1,110 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: sans-serif;
 }
 
-#parent{
-  padding: 50px;
+body {
+  background: linear-gradient(135deg, #141e30, #243b55);
+}
+
+#main {
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
-  flex-direction: row;
-}
-#circles{
-
-  /* padding: 50px; */
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  gap: 10%;
-  font-size: 32px;
-  
-}
-
-#circles div{
-  border-radius: 50%;
-  border: 2px solid black;
-  padding: 50px;
-
-}
-
-#heading{
-
-  text-align: center;
-  padding: 30px;
-  font-size: 25px;
-}
-
-#btns{
-  margin: 50px;
-  display: flex;
-  justify-content: space-evenly;
   align-items: center;
-  
 }
-#btns button{
+
+#card {
+  width: 500px;
+  background-color: white;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+#card h1 {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #222;
+  font-size: 38px;
+}
+
+#circles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+#circles::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-color: #ddd;
+  z-index: 0;
+}
+
+#circles div {
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  border: 4px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 30px;
-  border-radius: 5px;
-  padding: 10px;
-  width: 150px;
+  font-weight: bold;
+  z-index: 1;
+  transition: 0.3s;
+}
+
+#circles .active {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: white;
+  border-color: #00c6ff;
+  transform: scale(1.1);
+  box-shadow: 0px 5px 20px rgba(0, 198, 255, 0.5);
+}
+
+#heading {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#heading h2 {
+  font-size: 30px;
+  color: #333;
+}
+
+#btns {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#btns button {
+  width: 180px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  color: white;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+#btns button:hover {
+  transform: translateY(-3px);
+}
+
+#btns button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

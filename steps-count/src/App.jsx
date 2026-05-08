@@ -1,68 +1,61 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 const App = () => {
-
-  const [step,setStep] = useState(1)
-
   const arry = [
-    'step 1 : Learn React',
-    'Step 2 : Earn you Income',
-    'Step 3 : Invest your Income'
-  ]
+    "Step 1 : Learn React",
+    "Step 2 : Earn Your Income",
+    "Step 3 : Invest Your Income",
+  ];
 
-  function NextHandler(){
-    if(step < 3){
-      setStep( step + 1)
+  const [step, setStep] = useState(1);
+
+  const NextHandler = () => {
+    if (step < 3) {
+      setStep(step + 1);
     }
-  }
+  };
 
-
-  function prevousHandler (){
-    if(step > 1){
-      setStep( step - 1)
+  const prevousHandler = () => {
+    if (step > 1) {
+      setStep(step - 1);
     }
-  }
+  };
+
   return (
-    
-    <>
+    <div id="main">
 
-    <div id='parent'> 
-    <h1>React Step Assignment</h1>
+      <div id="card">
+        <h1>React Step Assignment</h1>
 
+        <div id="circles">
+          <div className={step >= 1 ? "active" : ""}>1</div>
+          <div className={step >= 2 ? "active" : ""}>2</div>
+          <div className={step >= 3 ? "active" : ""}>3</div>
+        </div>
 
-</div>
+        <div id="heading">
+          <h2>{arry[step - 1]}</h2>
+        </div>
 
-<div id='circles'>
+        <div id="btns">
+          <button
+            onClick={prevousHandler}
+            disabled={step === 1}
+          >
+            Previous
+          </button>
 
-    <div style={{
-      backgroundColor :  step == 1 ? 'blue' : 'white'
-    }}> 1</div>
-    <div style={{
-      backgroundColor : step == 2 ? 'blue' : 'white'
-    }}>2</div>
-    <div style={{
-       backgroundColor : step == 3 ? 'blue' : 'white'
-    }}>3</div>
+          <button
+            onClick={NextHandler}
+            disabled={step === 3}
+          >
+            Next
+          </button>
+        </div>
+      </div>
 
-  </div>
+    </div>
+  );
+};
 
-  <div id='heading'>
-
-
-  <h2>{arry[step -1]}</h2>
-  </div>
-
-  <div id='btns'>
-
-    <button onClick={prevousHandler} >Previous</button>
-    <button onClick={NextHandler}>Next</button>
-  </div>
-    
-    </>
-
-    
-    
-  )
-}
-
-export default App
+export default App;
