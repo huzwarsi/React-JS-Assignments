@@ -1,13 +1,17 @@
-import React, { useState } from 'react'
-import Button from './Components/Button'
+import React from 'react'
+import Buttons from './Components/Buttons'
+import { useContext } from 'react'
+import { ContextApi } from './Context/Counter'
 
 const App = () => {
-  const [theme, setTheme] = useState('Dark')
 
+  const CounterContext = useContext(ContextApi)
   return (
     <div>
-      <h1 >Theme is {theme}</h1>
-      <Button theme={theme}   ></Button>
+      <h1>Count is {CounterContext.count} </h1>
+      <Buttons/>
+
+
     </div>
   )
 }
