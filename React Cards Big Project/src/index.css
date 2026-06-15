@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+*{
+  font-family: Helvetica, sans-serif;
+}
+
+::selection{
+  color: rgb(248, 165, 0)}

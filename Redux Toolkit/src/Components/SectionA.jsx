@@ -1,9 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { store } from '../Store/Store'
 
 const SectionA = () => {
-  const counter = useSelector((store)=> store.counter)
+  const counter = useSelector((state)=> state.counter)
   return (
     <div>
         <h1>Section A {counter.count}</h1>

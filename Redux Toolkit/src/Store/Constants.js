@@ -1,5 +1,6 @@
 export const constant= {
     Increment : 'Increment',
-    Decrement : 'Decrement' 
+    Decrement : 'Decrement' ,
+    Reset : 'Reset'
     
 }

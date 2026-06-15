@@ -1,23 +1,22 @@
-import { constant } from "../Store/Constants";
+import { createSlice } from "@reduxjs/toolkit";
 
-const initialState ={
-    count : 0
-}
+const initialState = {
+  count: 0,
+};
 
-export const counterReducer = (state=initialState,action)=> {
-
-    switch(action.type){
-        case constant.Increment :
-            return{
-                count : state.count + 1
-            }
-        break;
-        case constant.Decrement : 
-        return {
-            count : state.count - 1
-        }
-        
-        default : return state
-        
+export const counterSlice = createSlice({
+  name: "counter",
+  initialState,
+  reducers: {
+    incrementAction(state) {
+      state.count += 1; 
+    },
+    decrementAction(state) {
+      state.count -= 1; 
     }
-}
+  },
+});
+
+export const { incrementAction, decrementAction } = counterSlice.actions;
+
+export default counterSlice.reducer;
